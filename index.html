@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>K3SHA23 — учусь веб-разработке</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --ink: #000000;
+        --graphite: #595959;
+        --mist: #e2e2e2;
+        --accent: #595959;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: #ffffff;
+        color: var(--ink);
+        font-family: "Inter", system-ui, sans-serif;
+      }
+      main {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 96px 24px 64px;
+      }
+      .pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 6px 14px;
+        border: 1px solid var(--ink);
+        border-radius: 8px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--graphite);
+      }
+      .pill i {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: var(--accent);
+      }
+      h1 {
+        margin: 24px 0 16px;
+        font-size: 56px;
+        font-weight: 320;
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+      }
+      p {
+        margin: 0 0 16px;
+        font-size: 18px;
+        line-height: 1.6;
+        color: var(--ink);
+      }
+      p.muted {
+        color: var(--graphite);
+      }
+      footer {
+        margin-top: 48px;
+        padding-top: 24px;
+        border-top: 1px solid var(--mist);
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.03em;
+        color: var(--graphite);
+      }
+      footer a {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      footer a:hover {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="pill"><i></i>Страница №1</span>
+      <h1>Привет, я K3SHA23</h1>
+      <p>
+        Я учусь веб-разработке. Эта страница — мой первый сайт: обычный HTML,
+        который живёт в git-репозитории и раздаётся с GitHub Pages.
+      </p>
+      <p class="muted">
+        Рядом растёт первый настоящий проект — mini-figma: редактор с канвасом,
+        фигурами и слоями на React, как маленькая копия Figma. Ссылка на него —
+        внизу.
+      </p>
+      <footer>
+        <p style="margin: 0">
+          <a href="https://k3sha23.github.io/mini-figma/">mini-figma →</a>
+          · собрано при помощи opencode
+        </p>
+      </footer>
+    </main>
+  </body>
+</html>
