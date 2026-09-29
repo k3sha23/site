@@ -25,15 +25,6 @@ function quickBuyTotal(price, qty, hasPromo) {
   return calcTotal(price, qty, hasPromo, 350)
 }
 
-// ПРОБЛЕМА 2: мёртвый код — старый формат чека, в проекте нет ни одного вызова.
-function formatLegacyReceipt(items) {
-  const lines = []
-  for (let i = 0; i < items.length; i++) {
-    lines.push(items[i].name + " ..... " + items[i].price)
-  }
-  return lines.join("\n")
-}
-
 // ПРОБЛЕМА 3: магические числа 5000 / 0.2 / 300 / 350 / 100 — смысл только угадывается.
 
 // ПРОБЛЕМА 4: захардкоженный API-токен (фейковый, только для демо).
