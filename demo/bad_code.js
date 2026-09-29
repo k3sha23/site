@@ -1,31 +1,37 @@
 // Демо-файл для учебного рефакторинга. Проблемы убираются по одной за коммит.
 
+// Правка 3: магические числа получили имена и смысл.
+const BIG_ORDER_THRESHOLD = 5000
+const BIG_ORDER_DISCOUNT_RATE = 0.2
+const VAT_RATE = 0.2
+const CART_PROMO_DISCOUNT = 300
+const QUICK_BUY_PROMO_DISCOUNT = 350
+const MIN_ORDER_TOTAL = 100
+
 // Правка 1: вместо двух копий — одна функция; промокод передаётся параметром.
 function calcTotal(price, qty, hasPromo, promoDiscount) {
   let total = price * qty
-  if (total > 5000) {
-    total = total - total * 0.2
+  if (total > BIG_ORDER_THRESHOLD) {
+    total = total - total * BIG_ORDER_DISCOUNT_RATE
   }
-  total = total + total * 0.2
+  total = total + total * VAT_RATE
   if (hasPromo) {
     total = total - promoDiscount
   }
-  if (total < 100) {
-    total = 100
+  if (total < MIN_ORDER_TOTAL) {
+    total = MIN_ORDER_TOTAL
   }
   return Math.round(total * 100) / 100
 }
 
 // Тонкие обёртки сохраняют прежний API для вызывающих сторон.
 function checkoutTotal(price, qty, hasPromo) {
-  return calcTotal(price, qty, hasPromo, 300)
+  return calcTotal(price, qty, hasPromo, CART_PROMO_DISCOUNT)
 }
 
 function quickBuyTotal(price, qty, hasPromo) {
-  return calcTotal(price, qty, hasPromo, 350)
+  return calcTotal(price, qty, hasPromo, QUICK_BUY_PROMO_DISCOUNT)
 }
-
-// ПРОБЛЕМА 3: магические числа 5000 / 0.2 / 300 / 350 / 100 — смысл только угадывается.
 
 // ПРОБЛЕМА 4: захардкоженный API-токен (фейковый, только для демо).
 const API_TOKEN = "sk-demo-0000000000000000-not-a-real-token"
