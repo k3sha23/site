@@ -33,8 +33,8 @@ function quickBuyTotal(price, qty, hasPromo) {
   return calcTotal(price, qty, hasPromo, QUICK_BUY_PROMO_DISCOUNT)
 }
 
-// ПРОБЛЕМА 4: захардкоженный API-токен (фейковый, только для демо).
-const API_TOKEN = "sk-demo-0000000000000000-not-a-real-token"
+// Правка 4: токен читается из окружения, в коде и git его нет.
+const API_TOKEN = process.env.DEMO_API_TOKEN
 
 async function submitOrder(order) {
   const res = await fetch("https://api.example.com/orders", {
